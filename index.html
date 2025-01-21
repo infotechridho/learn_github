@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hitung Keliling dan Luas Persegi</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 5px 0;
+      width: 200px;
+    }
+
+    button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Hitung Keliling dan Luas Persegi</h1>
+  <p>Masukkan panjang sisi persegi:</p>
+  <input type="number" id="sisi" placeholder="Panjang sisi" />
+  <br>
+  <button onclick="hitung()">Hitung</button>
+  <div class="result" id="result"></div>
+
+  <script>
+    function hitung() {
+      const sisi = parseFloat(document.getElementById("sisi").value);
+      if (isNaN(sisi) || sisi <= 0) {
+        document.getElementById("result").innerHTML = "<p style='color: red;'>Masukkan nilai sisi yang valid!</p>";
+        return;
+      }
+      const keliling = 4 * sisi;
+      const luas = sisi * sisi;
+      document.getElementById("result").innerHTML = `
+                <p>Keliling: ${keliling} satuan</p>
+                <p>Luas: ${luas} satuan persegi</p>
+            `;
+    }
+  </script>
+</body>
+
+</html>
